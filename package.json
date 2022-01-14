@@ -1,0 +1,15 @@
+{
+  "name": "terp_scraping",
+  "version": "1.0.0",
+  "description": "Scraping UMD's schedule of classes to track course avalibility over time. Work in progress.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mysql2": "^2.3.3",
+    "pg": "^8.7.1"
+  }
+}
