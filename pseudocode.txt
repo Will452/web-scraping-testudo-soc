@@ -5,19 +5,21 @@ scrape
     for each term_id in get_cur_terms()
         for each dept in depts
             for each course in get_courses(dept)
-                parse into section text blocks
-                for each section text block in course
-                    build and add section object w timestamp to long term storage
-// section object includes prof, total seats, open seats, waitlist, and holdfile
-// a list matches if it has same term id, dept id, and course id 
+                get_sections(course)
+                for each section
+                    build object with professor, seats, timestamp, etc.
+                    store object, prob in relational db for fast lookup
+
+running this daily should give a good enough representation of changes over time
 
 storing
-will have array or list or rdbms table for each term / course id
+need rdbms table to enable querying by prof, course, etc.
 
 accessing
 should be able to filter by:
-1. date
-2. course (required)
-3. professor (optional) will later be specified via dropdown
+1. date range
+2. course
+3. professor (optional) will later be specified via dropdown of existing profs
+
 returned section data points will be used to draw a graph to 
 show change over time
