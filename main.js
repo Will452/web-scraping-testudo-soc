@@ -9,12 +9,12 @@ gets.get_cur_depts_promise()
     //console.log(depts);
     let progress = 0;
     let total_depts = depts.length;
-    console.log('here');
     for(let i = 1; i < total_depts; i++){
         cur_dept = depts[i];
         dept_promise_arr
         .push(gets.get_courses_promise(term, cur_dept)
-            .then(() => {
+            .then((courses) => {
+                // console.log(courses); //sanity check
                 progress++;
                 process.stdout.write(`${progress} of ${total_depts} `);
             })
